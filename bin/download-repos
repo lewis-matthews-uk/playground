@@ -1,0 +1,4 @@
+#!/bin/bash
+project_root=$(dirname $(dirname $(realpath $0 )))
+svn export https://github.com/lewis-matthews-uk/playground/tree/main/src $project_root/pub/envs/production
+svn export https://github.com/lewis-matthews-uk/playground/tree/staging/src $project_root/pub/envs/staging
