@@ -17,4 +17,4 @@ project_root=$(dirname $(dirname $(realpath $0 )))
 
 rm -rf $project_root/pub/envs/production
 svn export --force https://github.com/lewis-matthews-uk/playground/trunk/src $project_root/pub/envs/production
-svn export --force https://github.com/lewis-matthews-uk/playground/trunk/src $project_root/pub/envs/staging
+svn export --force https://github.com/lewis-matthews-uk/playground/branches/staging/src $project_root/pub/envs/staging
