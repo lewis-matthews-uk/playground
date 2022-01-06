@@ -1,4 +1,20 @@
 #!/bin/bash
+
+realpath() {
+  OURPWD=$PWD
+  cd "$(dirname "$1")"
+  LINK=$(readlink "$(basename "$1")")
+  while [ "$LINK" ]; do
+    cd "$(dirname "$LINK")"
+    LINK=$(readlink "$(basename "$1")")
+  done
+  REALPATH="$PWD/$(basename "$1")"
+  cd "$OURPWD"
+  echo "$REALPATH"
+}
+
 project_root=$(dirname $(dirname $(realpath $0 )))
-svn export https://github.com/lewis-matthews-uk/playground/tree/main/src $project_root/pub/envs/production
-svn export https://github.com/lewis-matthews-uk/playground/tree/staging/src $project_root/pub/envs/staging
+
+rm -rf $project_root/pub/envs/production
+svn export --force https://github.com/lewis-matthews-uk/playground/trunk/src $project_root/pub/envs/production
+svn export --force https://github.com/lewis-matthews-uk/playground/trunk/src $project_root/pub/envs/staging
