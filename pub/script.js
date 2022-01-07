@@ -1,5 +1,5 @@
 const refreshSeconds = 10;
-const envs = ['production', 'develop', 'local'];
+const envs = ['production', 'staging', 'local'];
 const container = document.getElementById('container');
 
 envs.map((env) => {
