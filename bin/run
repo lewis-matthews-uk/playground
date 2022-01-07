@@ -15,5 +15,5 @@ realpath() {
 
 project_root=$(dirname $(dirname $(realpath $0 )))
 
-svn export --force https://github.com/lewis-matthews-uk/playground/trunk/src $project_root/pub/envs/production
-svn export --force https://github.com/lewis-matthews-uk/playground/branches/staging/src $project_root/pub/envs/staging
+$project_root/bin/delete-local
+watch -n 10 $project_root/bin/download-repos

@@ -14,8 +14,8 @@ envs.map((env) => {
     div.append(iframe);
 });
 
-setInterval(() => {
-    envs.map((env) => {
-        document.getElementById(env).contentWindow.location.reload();
-    });
-}, refreshSeconds * 1000)
+// setInterval(() => {
+//     envs.map((env) => {
+//         document.getElementById(env).contentWindow.location.reload();
+//     });
+// }, refreshSeconds * 1000)
