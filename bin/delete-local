@@ -16,4 +16,4 @@ realpath() {
 project_root=$(dirname $(dirname $(realpath $0 )))
 
 rm -rf $project_root/pub/envs/production
-rm -rf $project_root/pub/envs/staging
+rm -rf $project_root/pub/envs/develop
