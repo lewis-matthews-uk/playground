@@ -1,5 +1,5 @@
 const refreshSeconds = 10;
-const envs = ['production', 'develop'];
+const envs = ['production', 'develop', 'local'];
 const container = document.getElementById('container');
 
 envs.map((env) => {
@@ -9,7 +9,7 @@ envs.map((env) => {
     label.innerText = 'Environment: ' + env;
     div.append(label);
     const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', '/pub/envs/' + env);
+    iframe.setAttribute('src', env === 'local' ? '/src/' : '/pub/envs/' + env);
     iframe.setAttribute('id', env);
     div.append(iframe);
 });
